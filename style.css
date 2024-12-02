@@ -214,14 +214,11 @@ input[type='radio'] {
     appearance: none; 
     width: 80px;
     height: 80px;
-    border: 2px solid #333;
     border-radius: 50%;
+    border: 2px solid silver;
     outline: none; 
     cursor: pointer;
     transition: 0.15s;
-}
-input[type='radio']:checked {
-    background-color: #111;
 }
 input:nth-child(2), input:nth-child(4){
     width: 70px;
@@ -231,9 +228,37 @@ input:nth-child(3) {
     width: 60px;
     height: 60px;
 }
-input:hover {
-    background-color: #111;
+input:nth-child(1) {
+    border: 3px solid rgb(92, 39, 251);
 }
+input:nth-child(2) {
+    border: 3px solid rgb(72, 52, 253);
+}
+input:nth-child(3) {
+    border: 3px solid rgb(64, 95, 252);
+}
+input:nth-child(4) {
+    border: 3px solid rgb(67, 133, 255);
+}
+input:nth-child(5) {
+    border: 3px solid rgb(91, 159, 254);
+}
+input:nth-child(1):hover, input:nth-child(1):checked {
+    background-color: rgb(92, 39, 251);
+}
+input:nth-child(2):hover, input:nth-child(2):checked {
+    background-color: rgb(72, 52, 253);
+}
+input:nth-child(3):hover, input:nth-child(3):checked {
+    background-color:  rgb(64, 95, 252);
+}
+input:nth-child(4):hover, input:nth-child(4):checked {
+    background-color:  rgb(67, 133, 255);
+}
+input:nth-child(5):hover, input:nth-child(5):checked {
+    background-color:  rgb(91, 159, 254);
+}
+
 
 section h1 {
     font-size: 1.5rem;
@@ -267,7 +292,7 @@ section > div > span:last-child {
     display: none;
 }
 
-.page:first-child {
+.page1 {
     display: block;
 }
 
@@ -292,6 +317,7 @@ section > div > span:last-child {
     text-align: center;
     align-content: center;
     color: #fff;
+    transition: 0.2s;
 }
 .page > div > a:hover {
     background-color: var(--sub);

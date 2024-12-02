@@ -38,13 +38,13 @@ radios.forEach(function(radio){
         break;
       }
     }
-    if(document.querySelectorAll('input[type="radio"]:checked').length===question.length){
-      test = false;
-    }
     const move = radio.closest('.page>*').nextElementSibling;
     if(!move.classList.contains('block')){
       radio.closest('section').scrollIntoView();
       move.classList.add('block');
+    }
+    if(document.querySelectorAll('input[type="radio"]:checked').length===question.length){
+      test = false;
     }
   });
 });
@@ -74,7 +74,7 @@ nav.forEach(function(nav){
         i++;
         e.preventDefault();
         window.scrollTo({
-        top: main.offsetTop - document.querySelector('header').clientHeight-5,
+        top: main.offsetTop - document.querySelector('header').clientHeight-5-200,
         });
       }
     }
