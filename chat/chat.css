@@ -32,7 +32,7 @@ header {
 }
 
 header > ul {
-    width: 1600px;
+    width: 95%;
     height: 100%;
     margin: 0 auto;
     display: flex; 
@@ -99,7 +99,67 @@ header > ul > li > a:hover > div {
 }
 
 main {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     padding-top: 95px;
+    display: flex;
+    flex-direction: column;
 }
 
+.container {
+    width: 100%;
+    flex: 1;
+}
+
+.input_area {
+    bottom: 0px;
+    width: 100%;
+    padding: 15px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.input_area > div {
+    width: 650px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+input {
+    width: calc(100% - 85px);
+    border-radius: 10px;
+    border: 0px ;
+    padding: 10px 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: none;
+    background-color: #eaeaea;
+    resize: none;
+    overflow-y: auto;
+    max-height: 500px;
+}
+  
+input:focus {
+    border: 0px;
+    outline: none;
+}
+
+.input_area img {
+    width: 55px;
+}
+
+.input_area > div > div {
+    height: 50px;
+    background-color: var(--main);
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.box {
+    width: 100%;
+    background-color: red;
+}
