@@ -76,7 +76,7 @@ header > ul > li > a > div {
     border-radius: 0 0px 4px 4px;
     transition: 0.2s;
 }
-header > ul > li > a:nth-child(1) > div {
+header > ul > li > a:nth-child(2) > div {
     background-color: var(--main);
 }
 header > ul > li > a:hover > div {

@@ -181,6 +181,32 @@ main {
     border-radius: 20px;
     background-color: #fff;
     opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+}
+
+.info > ul > li > ul {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    opacity: 1;
+}
+
+.info > ul > li > ul:first-child {
+    border-bottom: 1.5px solid #666;   
+}
+
+.info > ul > li > ul:last-child {
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.info img {
+    height: 70%;
 }
 
 #test {
@@ -188,7 +214,6 @@ main {
     justify-content: center;
     position: relative;
 }
-
 
 section {
     width: 1100px;
@@ -259,7 +284,6 @@ input:nth-child(5):hover, input:nth-child(5):checked {
     background-color:  rgb(91, 159, 254);
 }
 
-
 section h1 {
     font-size: 1.5rem;
 }
@@ -284,6 +308,7 @@ section > div > span {
     font-weight: bold;
     font-size: 1rem;
 }
+
 section > div > span:last-child {
     right: 0;
 }
@@ -291,7 +316,6 @@ section > div > span:last-child {
 .page {
     display: none;
 }
-
 .page1 {
     display: block;
 }
@@ -380,7 +404,7 @@ footer img {
 }
 
 footer > ul > li > ul > a:hover {
-    background-color: var(--sub);
+    background-color: #dbdbdb;
 }
 
 footer p {
