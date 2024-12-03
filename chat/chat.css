@@ -128,6 +128,8 @@ main {
     justify-content: space-between;
     margin: 0 auto;
     position: relative;
+    background-color: #eaeaea;
+    border-radius: 10px;
 }
 
 textarea {
