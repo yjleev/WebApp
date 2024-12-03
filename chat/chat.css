@@ -109,12 +109,15 @@ main {
 .container {
     width: 100%;
     flex: 1;
+    padding: 30px 200px 50px;
+    overflow: scroll;
+     overflow-x: hidden;
 }
 
 .input_area {
     bottom: 0px;
     width: 100%;
-    padding: 15px 0px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
 }
@@ -124,42 +127,96 @@ main {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+    position: relative;
 }
 
-input {
+textarea {
     width: calc(100% - 85px);
+    height: 50px;
     border-radius: 10px;
-    border: 0px ;
-    padding: 10px 15px;
+    border: 0px;
+    padding: 11px 5px 11px 12px;
     font-size: 1rem;
-    outline: none;
-    transition: none;
     background-color: #eaeaea;
-    resize: none;
+    max-height: 200px;  
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
     overflow-y: auto;
-    max-height: 500px;
+    resize: none;
+    transform: translateZ(0); 
+    backface-visibility: hidden; 
+}
+
+textarea::-webkit-scrollbar {
+    width: 10px; 
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
 }
   
-input:focus {
+textarea:focus {
     border: 0px;
     outline: none;
+    height: 50px;
+    padding: 11px 5px 11px 12px;
 }
 
-.input_area img {
-    width: 55px;
-}
 
 .input_area > div > div {
+    width: 75px;
     height: 50px;
     background-color: var(--main);
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 0px 10px;
+    padding: 10px 5px;
     border-radius: 10px;
     cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: 0.2s;
 }
 
-.box {
-    width: 100%;
-    background-color: red;
+.input_area img {
+    width: 75%;
+}
+
+.input_area > div > div:hover {
+    background-color: rgb(71, 71, 200);
+}
+
+section {
+    padding: 20px 0px 20px 450px;
+    display: flex;
+    justify-content: end;
+}
+
+article {
+    display: inline-block;
+    padding: 13px 15px 13px 20px;
+    background-color: #eaeaea;
+    border-radius: 40px 0px 40px 40px;
+}
+
+nav {
+    padding: 20px 450px 20px 0px;
+    display: flex;
+    justify-content: start;
+}
+
+aside {
+    display: inline-block;
+    padding: 13px 20px 13px 15px;
+    background-color: var(--sub);
+    border-radius: 0px 40px 40px 40px;
+    color: #fff;
+}
+
+.container img {
+    height: 1rem;
 }
