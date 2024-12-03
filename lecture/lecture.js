@@ -5,51 +5,37 @@ const typeD = window.localStorage.getItem('D');
 
 console.log(typeA,typeB,typeC,typeD);
 
-const frame = document.querySelector('.frame');
-const lecture = document.querySelectorAll('.frame>a'); 
-let page = 0;
+const slides = document.querySelectorAll('.frame > .slide');
+let current = 0; // 초기 슬라이드는 첫 번째(인덱스 0)
 
-const over = (page) => {
-    if(page>4){
-        return page-4;
-    }
-    else {
-        return page;
-    }
+// 슬라이드 상태를 업데이트하는 함수
+const updateSlides = () => {
+    const totalSlides = slides.length;
+
+    slides.forEach((slide, index) => {
+        // 모든 슬라이드 초기화
+        slide.className = 'slide';
+
+        // 현재 슬라이드와 위치를 계산해 클래스 추가
+        if (index === current) {
+            slide.classList.add('center'); // 중앙 슬라이드
+        } else if (index === (current - 1 + totalSlides) % totalSlides) {
+            slide.classList.add('left'); // 왼쪽 슬라이드
+        } else if (index === (current + 1) % totalSlides) {
+            slide.classList.add('right'); // 오른쪽 슬라이드
+        } else if (index === (current - 2 + totalSlides) % totalSlides) {
+            slide.classList.add('left-back'); // 왼쪽 뒤 슬라이드
+        } else if (index === (current + 2) % totalSlides) {
+            slide.classList.add('right-back'); // 오른쪽 뒤 슬라이드
+        }
+    });
 };
 
-setInterval(()=>{
-    if(page === 5){
-        page=0;
-    }
+// 초기 상태 설정
+updateSlides();
 
-    lecture.forEach((e) => {
-        e.style.left = '';
-        e.style.right = '';
-        e.style.transform = '';
-        e.style.zIndex = '';
-    });
-    
-    lecture[over(page)].style.left = '0';              
-    lecture[over(page)].style.zIndex = '40';               
-    lecture[over(page)].style.transform = 'scale(0.8)';                     
-     
-    lecture[over(page + 1)].style.left = '50%';                            
-    lecture[over(page + 1)].style.transform = 'translate(-50%) scale(1.3)';
-    lecture[over(page + 1)].style.zIndex = '50';                              
-
-    lecture[over(page+2)].style.right = '0';             
-    lecture[over(page+2)].style.zIndex = '40';     
-    lecture[over(page+2)].style.transform = 'scale(0.8)';            
-
-    lecture[over(page + 3)].style.left = '20%';            
-    lecture[over(page + 3)].style.zIndex = '30';
-    lecture[over(page + 3)].style.transform = 'scale(0.6)';             
-
-    lecture[over(page + 4)].style.right = '20%';           
-    lecture[over(page + 4)].style.zIndex = '30';       
-    lecture[over(page + 4)].style.transform = 'scale(0.6)';     
-
-    page++;
-
-},3000);
+// 3초마다 슬라이드 이동
+setInterval(() => {
+    current = (current + 1) % slides.length; // 현재 슬라이드 인덱스 갱신
+    updateSlides(); // 상태 업데이트
+}, 4000);
