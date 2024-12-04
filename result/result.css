@@ -103,6 +103,48 @@ main {
     padding-top: 95px;
 }
 
+main .bk section {
+    width: 100%;
+    height: 500px;
+}
+
+.intro {
+    text-align: center;
+    line-height: 8;
+    font-size: 1.5rem;
+    height: 400px;
+}
+
+.bk .even {
+    background-color: var(--sub);
+    position: relative;
+    color: #fff;
+}  
+
+.bk .even > div {
+    width: 100%;
+    height: 50px;
+    transform: rotate(1deg) translateY(-50%);
+    position: absolute;
+    background-color: inherit;
+}
+
+.bk .odd > div {
+    width: 100%;
+    height: 50px;
+    transform: rotate(-1deg) translateY(-50%);
+    position: absolute;
+    background-color: var(--sub);
+}
+
+.bk .even > div > div {
+    background-color: inherit;
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    transform: translate(35%, -50%) rotate(-3deg);
+}
+
 footer {
     height: 200px;
     border-top: 1px solid #dcdcdc;
