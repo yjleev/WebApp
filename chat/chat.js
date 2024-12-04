@@ -55,3 +55,31 @@ const receive = (a)=>{
         container.scrollTop = container.scrollHeight;
     },5000);
 }
+
+const socket = new WebSocket('ws://localhost:5215');
+
+socket.onopen = () => {
+    console.log("서버에 연결되었습니다.");
+};
+
+socket.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+    if (data.type === "response") {
+        console.log(`모델 응답: ${data.message}`);
+    }
+};
+
+socket.onerror = (error) => {
+    console.error(`오류 발생: ${error.message}`);
+};
+
+function sendQuestion(question) {
+    const payload = {
+        type: "send_msg",
+        question: question
+    };
+    socket.send(JSON.stringify(payload));
+}
+
+// 예시로 질문 보내기
+sendQuestion("안녕하세요, 오늘 날씨는 어떤가요?");
